@@ -1,5 +1,6 @@
 package com.e.rider;
 
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(MainActivity.this,"punbnub data"+ message.getMessage().toString(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "punbnub data" + message.getMessage().toString(), Toast.LENGTH_LONG).show();
 
                     }
                 });
