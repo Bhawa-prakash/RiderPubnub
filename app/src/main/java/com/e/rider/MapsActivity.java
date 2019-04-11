@@ -52,18 +52,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 JSONObject jsonObject = new JSONObject(message.getMessage().toString());
                                 double lat = Double.parseDouble(jsonObject.optString("latt"));
                                 double longitute = Double.parseDouble(jsonObject.optString("long"));
-                                 LatLng sydney = new LatLng(lat,longitute);
+                                LatLng sydney = new LatLng(lat,longitute);
+                                mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+                                mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
-                           mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-                            mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
 
                         }
-                        Toast.makeText(MapsActivity.this, "punbnub data" +
-                                message.getMessage().toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(MapsActivity.this, "punbnub data" + message.getMessage().toString(), Toast.LENGTH_LONG).show();
 
 
                     }
